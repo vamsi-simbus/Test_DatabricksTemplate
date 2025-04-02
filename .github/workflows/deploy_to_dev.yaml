@@ -1,6 +1,6 @@
 name: deploy_to_dev
 
-concurrency: 1
+concurrency: "1"
 
 on:
   workflow_dispatch
