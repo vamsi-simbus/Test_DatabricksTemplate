@@ -8,8 +8,16 @@ resources:
             notebook_path: ../src/notebooks/notebook1.ipynb
             base_parameters:
               env: ${var.env}
-              value1: 15
-              value2: 10
+              value1: "15"
+              value2: "10"
             source: WORKSPACE
+        - task_key: Task2
+          notebook_task:
+            notebook_path: ../src/notebooks/notebook2.ipynb
+            base_parameters:
+              env: ${var.env}
+              value1: "25"
+              value2: "10"
+            source: WORKSPACE    
       queue:
         enabled: true
