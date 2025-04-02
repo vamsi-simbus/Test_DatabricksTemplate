@@ -23,8 +23,8 @@ jobs:
       - uses: databricks/setup-cli@main
 
       - run: |
-          databricks bundle validate -t "dev"
+          databricks bundle validate -t "dev" --profile dev
 
       - run: |
-          databricks bundle deploy -t "dev"
+          databricks bundle deploy -t "dev" --profile dev
          
