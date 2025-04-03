@@ -22,8 +22,8 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
-      - run: |
-          databricks auth login --host ${{ vars.DATABRICKS_HOST }}
+    ##  - run: |
+    ##      databricks auth login --host ${{ vars.DATABRICKS_HOST }}
 
       - run: |
           databricks bundle validate -t "dev" --profile dev
