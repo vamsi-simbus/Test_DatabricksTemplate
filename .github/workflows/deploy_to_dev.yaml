@@ -7,9 +7,9 @@ on:
 
 env:
   DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
-  ARM_CLIENT_ID: ${{ secrets.SPN_CLIENT_ID }}
-  ARM_CLIENT_SECRET: ${{ secrets.SPN_CLIENT_SECRET }}
-  ARM_TENANT_ID: ${{ secrets.TENANT_ID}}
+  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID}}
 
 jobs:
   deploy:
