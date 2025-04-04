@@ -1,15 +1,15 @@
 name: deploy_to_dev
 
-concurrency: 1
+concurrency: "1"
 
 on:
   workflow_dispatch
 
 env:
-  DATABRICKS_HOST: ${{vars.DATABRICKS_HOST}}
-  ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID}}
-  ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
-  ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
+  DATABRICKS_HOST: ${{vars.host}}
+  ARM_CLIENT_ID: ${{secrets.clientID}}
+  ARM_CLIENT_SECRET: ${{secrets.clientsecret}}
+  ARM_TENANT_ID: ${{secrets.tenantID}}
 
 jobs:
   deploy:
