@@ -6,10 +6,10 @@ on:
   workflow_dispatch
 
 env:
-  DATABRICKS_HOST: ${{vars.host}}
-  ARM_CLIENT_ID: ${{secrets.clientID}}
-  ARM_CLIENT_SECRET: ${{secrets.clientsecret}}
-  ARM_TENANT_ID: ${{secrets.tenantID}}
+  DATABRICKS_HOST: ${{vars.HOST}}
+  ARM_CLIENT_ID: ${{secrets.CLIENTID}}
+  ARM_CLIENT_SECRET: ${{secrets.CLIENTSECRET}}
+  ARM_TENANT_ID: ${{secrets.TENANTID}}
 
 jobs:
   deploy:
@@ -27,8 +27,8 @@ jobs:
     ##
 
       - run: |
-          databricks bundle validate -t "dev"
+          databricks bundle validate -t "dev" --profile DEFAULT
 
       - run: |
-          databricks bundle deploy -t "dev"
+          databricks bundle deploy -t "dev" --profile DEFAULT
          
