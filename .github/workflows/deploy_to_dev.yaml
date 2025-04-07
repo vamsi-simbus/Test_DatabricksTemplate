@@ -7,9 +7,6 @@ on:
 
 env:
   DATABRICKS_HOST: ${{vars.HOST}}
-  ARM_CLIENT_ID: ${{secrets.CLIENTID}}
-  ARM_CLIENT_SECRET: ${{secrets.CLIENTSECRET}}
-  ARM_TENANT_ID: ${{secrets.TENANTID}}
   DATABRICKS_TOKEN: ${{secrets.TOKEN}}
 
 jobs:
