@@ -27,8 +27,8 @@ jobs:
     ##
 
       - run: |
-          databricks bundle validate -t "dev" --profile DEFAULT
+          databricks bundle validate -t "dev" --profile dev
 
       - run: |
-          databricks bundle deploy -t "dev" --profile DEFAULT
+          databricks bundle deploy -t "dev" --profile dev
          
