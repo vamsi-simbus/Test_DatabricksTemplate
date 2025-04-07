@@ -10,6 +10,7 @@ env:
   ARM_CLIENT_ID: ${{secrets.CLIENTID}}
   ARM_CLIENT_SECRET: ${{secrets.CLIENTSECRET}}
   ARM_TENANT_ID: ${{secrets.TENANTID}}
+  DATABRICKS_TOKEN: ${{secrets.TOKEN}}
 
 jobs:
   deploy:
@@ -20,10 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install databricks CLI
-        run: |
-         curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
-         
       - uses: databricks/setup-cli@main
 
     ##  - run: |
