@@ -13,6 +13,9 @@ targets:
   dev:
     workspace:
       host: https://adb-777862349969176.16.azuredatabricks.net/
+    permissions:
+      - user_name: vamsi.krishna@simbustech.com
+        level: CAN_MANAGE
   
   test:
     workspace:
