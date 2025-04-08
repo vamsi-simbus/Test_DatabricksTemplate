@@ -18,10 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         
-     # - uses: databricks/setup-cli@main
-
-      - name: install-databricks-cli
-        uses: microsoft/install-databricks-cli@v0.244.0
+      - uses: databricks/setup-cli@main
 
     ##  - run: |
     ##      databricks auth login --host ${{ vars.DATABRICKS_HOST }}
