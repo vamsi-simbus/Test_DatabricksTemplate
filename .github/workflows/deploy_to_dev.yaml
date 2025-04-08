@@ -25,13 +25,13 @@ jobs:
     ##
 
       - run: |
-          databricks bundle validate -t "dev" --profile dev
+          databricks bundle validate --profile dev
         env:
           DATABRICKS_HOST: ${{vars.HOST}}
           DATABRICKS_TOKEN: ${{secrets.TOKEN}}
 
       - run: |
-          databricks bundle deploy -t "dev" --profile dev
+          databricks bundle deploy --profile dev
         env:
           DATABRICKS_HOST: ${{vars.HOST}}
           DATABRICKS_TOKEN: ${{secrets.TOKEN}}  
