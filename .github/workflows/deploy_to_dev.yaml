@@ -12,11 +12,11 @@ env:
 jobs:
   deploy:
     environment: dev
-    name: "Deploy bundle"
+    name: "Deploy bundle new"
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         
       - uses: databricks/setup-cli@main
 
@@ -26,17 +26,15 @@ jobs:
 
       - run: |
           databricks bundle validate --profile dev -t dev
-        working-directory: .  
+        working-directory: ./databricks-bundle  
         env:
           DATABRICKS_HOST: ${{vars.HOST}}
           DATABRICKS_TOKEN: ${{secrets.TOKEN}}
-          DATABRICKS_BUNDLE_ENV: dev
 
       - run: |
           databricks bundle deploy --profile dev -t dev
-        working-directory: .  
+        working-directory: ./databricks-bundle
         env:
           DATABRICKS_HOST: ${{vars.HOST}}
           DATABRICKS_TOKEN: ${{secrets.TOKEN}}
-          DATABRICKS_BUNDLE_ENV: dev  
          
