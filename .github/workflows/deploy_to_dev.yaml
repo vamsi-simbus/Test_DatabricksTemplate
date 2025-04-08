@@ -17,11 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Install databricks CLI
-        run: |
-         curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
-         
+        
       - uses: databricks/setup-cli@main
 
     ##  - run: |
@@ -30,7 +26,13 @@ jobs:
 
       - run: |
           databricks bundle validate -t "dev" --profile dev
+        env:
+          DATABRICKS_HOST: ${{vars.HOST}}
+          DATABRICKS_TOKEN: ${{secrets.TOKEN}}
 
       - run: |
           databricks bundle deploy -t "dev" --profile dev
+        env:
+          DATABRICKS_HOST: ${{vars.HOST}}
+          DATABRICKS_TOKEN: ${{secrets.TOKEN}}  
          
