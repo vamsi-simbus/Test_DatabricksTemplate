@@ -1,6 +1,6 @@
 name: deploy_to_test
 
-concurrency: 1
+concurrency: "1"
 
 on:
   workflow_dispatch
@@ -23,7 +23,6 @@ jobs:
       - uses: databricks/setup-cli@main
 
       - run: databricks bundle validate -t "test" --var="env=test"
-        working-directory: .
+
 
       - run: databricks bundle deploy -t "test" --var="env=test"
-        working-directoy: .
